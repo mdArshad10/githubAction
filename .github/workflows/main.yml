@@ -1,0 +1,15 @@
+name: first-test
+
+on: [push]
+
+
+jobs:
+  install-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+  
