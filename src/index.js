@@ -11,10 +11,15 @@ app.use(express.json({ limit: "10mb", extended: true }));
 app.use(morgan("dev"));
 app.use(helmet());
 
+export const sum = (a, b) => a + b;
+
 app.get("/", (req, res) => {
+  const sum = add("1", 6);
+  
   res.status(200).json({
     message: "Testing the Github Action",
     success: true,
+    data:sum
   });
 });
 
